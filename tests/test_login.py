@@ -11,7 +11,7 @@ class TestLoginPage:
         page.log_input_text_email(AUTH_VALID_EMAIL)
         page.log_input_text_password(AUTH_VALID_PASSWORD)
         page.click_log_in_btn()
-        assert page.is_main_page(), 'Вход по валидным данным неуспешный'
+        page.check_main_page()
 
     def test_login_via_personal_account_button(self, driver):
         """Вход в аккаунт по кнопке "Личный кабинет" на странице "Главная" """
@@ -21,7 +21,7 @@ class TestLoginPage:
         page.log_input_text_email(AUTH_VALID_EMAIL)
         page.log_input_text_password(AUTH_VALID_PASSWORD)
         page.click_log_in_btn()
-        assert page.is_main_page()
+        page.check_main_page()
 
     def test_login_via_registration_page(self, driver):
         """Вход по кнопке "Войти" на странице "Регистрация" """
@@ -31,7 +31,7 @@ class TestLoginPage:
         page.log_input_text_email(AUTH_VALID_EMAIL)
         page.log_input_text_password(AUTH_VALID_PASSWORD)
         page.click_log_in_btn()
-        assert page.is_main_page()
+        page.check_main_page()
 
     def test_login_via_password_recovery_form_login_button(self, driver):
         """Вход через страницу "Восстановление пароля" """
@@ -41,4 +41,4 @@ class TestLoginPage:
         page.log_input_text_email(AUTH_VALID_EMAIL)
         page.log_input_text_password(AUTH_VALID_PASSWORD)
         page.click_log_in_btn()
-        assert page.is_main_page()
+        page.check_main_page()

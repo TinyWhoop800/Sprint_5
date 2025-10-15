@@ -13,4 +13,4 @@ class TestLogout:
         page.click_personal_account_btn()
         page.assert_present_logout_btn()
         page.click_logout_btn()
-        assert page.is_login_page(), 'После выхода из аккаунта, страница авторизации не открылась"'
+        page.check_login_page()

@@ -1,19 +1,16 @@
 from pages.base_page import BasePage
 from locators.main_locators import MainLocators
+from test_data import MAIN_URL, REGISTRATION_URL, PASSWORD_RECOVERY_URL, LOGIN_URL
 
 class MainPage(BasePage):
-    # Страница "Главная"
-    MAIN_URL = "https://stellarburgers.education-services.ru/"
-    # Страница "Регистрация"
-    REGISTRATION_URL = "https://stellarburgers.education-services.ru/register"
-    # Страница "Восстановить пароль"
-    PASSWORD_RECOVERY_URL = "https://stellarburgers.education-services.ru/forgot-password"
-    # Страница "Вход"
-    LOGIN_URL = "https://stellarburgers.education-services.ru/login"
 
     def __init__(self, driver):
         super().__init__(driver)
         self.locator = MainLocators
+        self.MAIN_URL = MAIN_URL
+        self.REGISTRATION_URL = REGISTRATION_URL
+        self.PASSWORD_RECOVERY_URL = PASSWORD_RECOVERY_URL
+        self.LOGIN_URL = LOGIN_URL
 
     # Локаторы на странице "Войти"
     ELEMENTS_LOGIN_PAGE = [
@@ -67,9 +64,9 @@ class MainPage(BasePage):
         """Клик по кнопке "Войти в аккаунт" """
         self.click(self.locator.MAIN_LOGIN_BTN)
 
-    def is_main_page(self):
+    def check_main_page(self):
         """Проверяем, что мы на главной странице """
-        return self.is_current_url(self.MAIN_URL)
+        self.check_current_url(self.MAIN_URL)
 
     def click_buns_section(self):
         """Клик на раздел "Булки" в блоке "Соберите бургер" """
@@ -116,9 +113,9 @@ class MainPage(BasePage):
         """Поиск элементов на странице "Вход" """
         assert self.are_element_present(self.ELEMENTS_LOGIN_PAGE), 'Регистрация неуспешная, не все элементы были найдены'
 
-    def is_login_page(self):
+    def check_login_page(self):
         """Проверяем, что мы на главной странице """
-        return self.is_current_url(self.LOGIN_URL)
+        self.check_current_url(self.LOGIN_URL)
 
     # Страница "Регистрация"
     def reg_input_text_name(self, name):

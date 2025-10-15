@@ -12,7 +12,7 @@ class TestNavigationBtn:
         page.click_log_in_btn()
         page.click_personal_account_btn()
         page.click_constructor_btn()
-        assert page.is_main_page()
+        page.check_main_page()
 
     def test_navigation_to_homepage_on_logo_click(self, driver):
         """Проверяет переход на главную страницу при клике на логотип """
@@ -23,4 +23,4 @@ class TestNavigationBtn:
         page.click_log_in_btn()
         page.click_personal_account_btn()
         page.click_logo_btn()
-        assert page.is_main_page()
+        page.check_main_page()

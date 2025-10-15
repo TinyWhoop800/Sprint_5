@@ -4,6 +4,15 @@ import string
 AUTH_VALID_EMAIL = "artem_galkin_33_100@ya.ru"
 AUTH_VALID_PASSWORD = "qwe123"
 
+# Страница "Главная"
+MAIN_URL = "https://stellarburgers.education-services.ru/"
+# Страница "Регистрация"
+REGISTRATION_URL = "https://stellarburgers.education-services.ru/register"
+# Страница "Восстановить пароль"
+PASSWORD_RECOVERY_URL = "https://stellarburgers.education-services.ru/forgot-password"
+# Страница "Вход"
+LOGIN_URL = "https://stellarburgers.education-services.ru/login"
+
 def generate_email():
     domains = ["yandex.ru", "gmail.com", "ya.ru"]
     name = "artem"
