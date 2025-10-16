@@ -66,7 +66,9 @@ class MainPage(BasePage):
 
     def check_main_page(self):
         """Проверяем, что мы на главной странице """
-        self.check_current_url(self.MAIN_URL)
+        self.wait_for_url(self.MAIN_URL)
+        current_url = self.get_current_url()
+        assert current_url == self.MAIN_URL, f'Ожидался {self.MAIN_URL}, получен: {current_url}'
 
     def click_buns_section(self):
         """Клик на раздел "Булки" в блоке "Соберите бургер" """
@@ -115,7 +117,9 @@ class MainPage(BasePage):
 
     def check_login_page(self):
         """Проверяем, что мы на главной странице """
-        self.check_current_url(self.LOGIN_URL)
+        self.wait_for_url(self.LOGIN_URL)
+        current_url = self.get_current_url()
+        assert current_url == self.LOGIN_URL, f'Ожидался {self.LOGIN_URL}, получен: {current_url}'
 
     # Страница "Регистрация"
     def reg_input_text_name(self, name):

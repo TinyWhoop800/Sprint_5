@@ -1,6 +1,7 @@
 import random
 import string
 
+AUTH_VALID_NAME = "Artem"
 AUTH_VALID_EMAIL = "artem_galkin_33_100@ya.ru"
 AUTH_VALID_PASSWORD = "qwe123"
 
@@ -26,6 +27,3 @@ def generate_password(min_length=6, max_length=20):
     length = random.randint(min_length, max_length)
     chars = string.ascii_letters + string.digits
     return ''.join(random.choices(chars, k=length))
-
-def generate_name():
-    return "Artem"

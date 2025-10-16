@@ -1,8 +1,8 @@
 from pages.main_page import MainPage
 import pytest
-from test_data import generate_name, generate_email, generate_password
+from test_data import generate_email, generate_password, AUTH_VALID_NAME
 
-name = generate_name()
+name = AUTH_VALID_NAME
 password = generate_password()
 
 

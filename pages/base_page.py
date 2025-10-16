@@ -35,14 +35,14 @@ class BasePage:
                 return False
         return True
 
-    def check_current_url(self, expected_url, exact_match=True, timeout=5):
-        """Проверить, что текущий URL соответствует ожидаемому."""
-        wait = WebDriverWait(self.driver, timeout)
-        if exact_match:
-            condition = EC.url_to_be(expected_url)
-        else:
-            condition = EC.url_contains(expected_url)
-        wait.until(condition)
+    def get_current_url(self):
+        """Возвращает текущий URL"""
+        return self.driver.current_url
+
+    def wait_for_url(self, expected_url):
+        """Ждет, пока URL станет ожидаемым"""
+        self.wait.until(EC.url_to_be(expected_url))
+        return self.get_current_url()
 
     def wait_for_visibility(self, locator):
         """Ждать, пока элемент станет видимым. Возвращает элемент."""
